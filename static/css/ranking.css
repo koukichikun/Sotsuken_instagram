@@ -1,0 +1,462 @@
+@charset "utf-8";
+@font-face {
+    font-family: 'myfont';
+    src: url('../css/FUTENEmiddle.ttf') format('furtene');
+}
+
+body{
+    margin: 0;
+}
+
+/* .container {
+    display: flex;
+    flex-direction: column;
+} */
+header {    /*固定*/
+    z-index: 100;
+    width: 100%;
+    height: 95px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(33, 44, 100, 0.7);
+}
+
+header .nav-h li {
+    font-family: 'myfont', futene;
+    font-weight: bold;
+    text-align: right;
+    margin-top: 15px;
+}
+
+header .nav-h li a {
+    color: white;
+}
+li a:hover{
+    color:#EFFE92;
+    border-bottom:2px solid #EFFE92;
+}
+header .nav-h .head {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px ;
+    list-style: none;
+    margin: 0;
+}
+
+main {
+    padding-top: 95px;
+    width: 85%;
+    margin: auto;
+    min-height: calc(100vh - 150px);
+}
+
+.slick3 {
+    width: 30%;
+    margin-left: 5%;
+}
+
+.slick-arrow {
+    opacity: 1!important;
+}
+
+.slick-next:before{
+    background: ▶!important;
+    background-size: contain!important;
+    color: black;
+  }
+
+.slick-prev:before{
+    background: ◀!important;
+    background-size: contain!important;
+    color: black;
+}
+
+.shop_detail{
+    margin-bottom: 100px;
+}
+.sns {
+    font-size: 9pt;
+    margin-left: 15%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    text-align: center;
+    margin: 0 auto;
+}
+.sns h3 {
+    width: 100%;
+    margin-left: 15%;
+    text-align: center;
+    margin: 0 auto;
+}
+.sns img{
+    width: 2.5rem;
+    height: 2.5rem;
+    margin: 2%;
+    border-radius: 50%;
+
+}
+
+.copy #sns_button{
+    font-size: 20px;
+    border: 2px solid #000;
+    border-radius: 0;
+    background: #fff;
+}
+
+.copy #sns_button:hover{
+    
+    color: #fff;
+    background: #000;
+}
+
+.name { /*店名、情報、類似*/
+    /* position: absolute; */
+    top: 7rem;
+    left: 10%;
+}
+
+.shop_detail {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.shop_detail h2 {
+    width: 100%;
+}
+.shop_detail .slick {
+    width: 48%;
+}
+.shop_detail .syoukai {
+    width: 48%;
+    word-break: break-all;
+}
+
+.shop_detail .rank{
+    width: 70px;
+}
+
+.info2 {
+    margin-bottom: 150px;
+    margin-left: 5%;
+}
+.info2 th {
+    margin: 2%;
+    padding: 20px;
+    background-color: rgb(255, 237, 102);
+}
+
+.info2 td {
+    background-color: rgb(255, 255, 255);
+}
+
+.googlemap{
+    position: relative;
+    width: 100%;
+    padding-top: 75%;
+}
+
+.googlemap iframe {
+    
+    position: absolute;
+    top: 0;
+    margin-left: 5%;
+    width: 90%;
+    height: 95%;
+}
+
+.similar_info { /*類似表示*/
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-left: 5%;
+}
+.grid-item {
+    width: 28%;
+    text-align: center;
+    margin-bottom: 50px;
+}
+.grid-item h1{
+    display: flex;
+    margin: auto;
+}
+.grid-item h2{
+    display:flex;
+    margin: auto;
+    border-bottom: 3px solid #333;
+}
+.grid-item a{
+    display:flex;
+    margin: auto;
+}
+.similar_info img {
+    padding: 0px;
+    place-items: center;
+    border: solid 1px #000000;
+    width: 100%;
+    z-index:300;
+}
+
+small {
+    text-align: center;
+    display: block;
+    color: white;
+
+}
+
+.logo {
+    float: left;
+    margin:10px 200px 10px 70px;
+}
+
+.logo img {
+    width: 70px;
+}
+
+
+#footer {
+    background-color: rgb(38, 37, 48);
+}
+
+
+
+#footer .nav-h li {
+    font-family: 'myfont', futene;
+    font-weight: bold;
+    text-align: right;
+}
+
+a {
+    text-decoration:none; 
+}
+
+#footer .nav-h li a {
+    color: white;
+}
+li a:hover{
+    color:#EFFE92;
+    border-bottom:2px solid #EFFE92;
+}
+#footer .nav-h .head {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px ;
+    list-style: none;
+    margin: 0;
+}
+/* footer nav  li {
+    list-style: none;
+    flex: 0 0 15%;
+    position: relative;
+    left: 12pc;
+} */
+
+.slick3 img {
+    object-fit: cover;
+    width:280px;
+    height:210px;
+}
+
+.border_left{
+    border-left:10px solid #333;
+    padding:0px 10px 0px 10px;
+}
+
+h2 img {
+    width: 50px;
+}
+
+.slick1 {
+    color: white;
+}
+
+.slick1 img{
+    width: 100%;
+    height: 30vw;
+    /*margin: auto;*/
+    background-position: center;
+    object-fit: cover;
+
+}
+
+.sl{
+    width: 100%;
+    position: relative;
+    
+}
+
+.intro {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: white;/*文字を白に*/
+    text-shadow: 5px 5px 5px #0a0a0a;
+    font-weight: bold; /*太字に*/
+    font-size: 1.5em;/*サイズ2倍*/
+    font-family : 'UD デジタル 教科書体 NP-B';/*Google Font*/
+    -ms-transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    margin:0;
+    padding:0;
+        /*文字の装飾は省略*/
+
+}
+
+.button{
+    font-size: 20px;
+    /*background-color: #ff838b;
+    color: #fff;*/
+    border-radius: 5px;
+    padding: 5px 5px;
+    text-decoration: underline;
+    margin-left: 240px;
+}
+
+.r_img img {
+    object-fit: cover;
+    width:280px;
+    height:210px;
+}
+
+.r_img {
+    width: 30%;
+    margin-left: 5%;
+}
+
+
+
+@media screen and (max-width: 1024px) {
+
+    #header .head li {
+        display: none;
+        /*非表示*/
+    }
+
+    .logo img {
+        width: 50px;
+    }
+
+    header {
+        height:70px;
+    }
+    .intro {
+        font-size: 15px;
+    }
+    
+    .logo{
+        margin-left: 43%;
+    }
+
+}
+
+@media screen and (max-width: 1024px) {
+    .slick3 {
+        margin-left: 5%;
+        min-width:200px;
+    }
+
+    .r_img {
+        margin-left: 5%;
+        min-width:200px;
+    }
+
+    div .copy{
+        width:100%
+    }
+
+    .grid-item {
+        width: 28%;
+        text-align: center;
+        margin-bottom: 50px;
+        font-size: 15px;
+    }
+
+    footer a{
+        display:none;
+        
+    }
+
+    
+    
+
+}
+
+@media screen and (max-width: 1024px) {
+    .shop_detail{
+        display:flex;
+        flex-flow: column;
+    }
+
+    .slick3 {
+        width: 100%;
+        margin-left: 5%;
+        text-align:center;
+        margin:0 auto;
+        padding:1em;
+        object-fit: cover;
+    }
+    
+
+    .shop_detail .syoukai {
+        width: 90%;
+        word-break: break-all;
+        text-align:center;
+        margin:0 auto;
+        padding:1em;
+    }
+
+    .shop_detail h2 {
+        width: 100%;
+        font-size: 20px;
+    }
+
+    .info2 th {
+        margin: 2%;
+        padding: 10px;
+
+        background-color: rgb(255, 237, 102);
+    }
+
+    .copy #sns_button {
+        font-size: 10px;
+        border: 2px solid #000;
+        border-radius: 0;
+        background: #fff;
+    }
+
+    .similar_info {
+        display: flex;
+        justify-content: space-between;
+        flex-flow: column;
+        margin-left: 5%;
+    }
+
+    .grid-item{
+        text-align: center;
+        margin:0 auto;
+        padding:20px;
+        width: 60%;
+    }
+
+
+    
+    
+
+}
+
+@media screen and (max-width: 599px) {
+
+    .button {
+        font-size: 20px;
+        border-radius: 5px;
+        padding: 5px 5px;
+        text-decoration: underline;
+        margin-left: 100px;
+    }
+
+    .shop_detail .rank{
+        width: 50px;
+    }
+}

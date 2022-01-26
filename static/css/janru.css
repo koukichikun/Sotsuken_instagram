@@ -1,0 +1,279 @@
+@charset "utf-8";
+#g-nav {
+  display: none;
+}
+/*========= ナビゲーションのためのCSS ===============*/
+@media screen and (max-width: 740px)   {
+  
+#header {    /*固定*/
+  height: 15w;
+    
+}
+
+@media screen and (max-width: 740px) {
+
+  #footer{
+    height: 15%;
+  }
+  
+}
+
+#g-nav{
+  display: inline;
+    /*position:fixed;にし、z-indexの数値を大きくして前面へ*/
+    position:fixed;
+    z-index: 999;
+    /*ナビのスタート位置と形状*/
+  top:-120%;
+    left:0;
+  width:100%;
+    height: 100vh;/*ナビの高さ*/
+  background:#999;
+    /*動き*/
+  transition: all 0.6s;
+}
+
+/*アクティブクラスがついたら位置を0に*/
+#g-nav.panelactive{
+    top: 0;
+}
+
+/*ナビゲーションの縦スクロール*/
+#g-nav.panelactive #g-nav-list{
+    /*ナビの数が増えた場合縦スクロール*/
+    position: fixed;
+    z-index: 999; 
+    width: 100%;
+    height: 100vh;/*表示する高さ*/
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/*ナビゲーション*/
+#g-nav ul {
+    /*ナビゲーション天地中央揃え*/
+    position: absolute;
+    z-index: 999;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+   
+}
+
+
+/*リストのレイアウト設定*/
+
+#g-nav li{
+  list-style: none;
+    text-align: center; 
+}
+
+#g-nav li a{
+  color: #333;
+  text-decoration: none;
+  padding:10px;
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: bold;
+}
+
+/*========= ボタンのためのCSS ===============*/
+.openbtn1{
+  position:fixed;
+    z-index: 9999;/*ボタンを最前面に*/
+  top:10px;
+  right: 10px;
+  cursor: pointer;
+    width: 50px;
+    height:50px;
+}
+  
+/*×に変化*/  
+.openbtn1 span{
+    display: inline-block;
+    transition: all .4s;
+    position: absolute;
+    left: 10px;
+    height: 3px;
+    border-radius: 2px;
+  background-color: white;
+    width: 45%;
+  }
+
+.openbtn1 span:nth-of-type(1) {
+  top:15px; 
+}
+
+.openbtn1 span:nth-of-type(2) {
+  top:23px;
+}
+
+.openbtn1 span:nth-of-type(3) {
+  top:31px;
+}
+
+.openbtn1.active span:nth-of-type(1) {
+    top: 18px;
+    left: 18px;
+    transform: translateY(6px) rotate(-45deg);
+    width: 30%;
+}
+
+.openbtn1.active span:nth-of-type(2) {
+  opacity: 0;
+}
+
+.openbtn1.active span:nth-of-type(3){
+    top: 30px;
+    left: 18px;
+    transform: translateY(-6px) rotate(45deg);
+    width: 30%;
+}
+
+/*========= レイアウトのためのCSS ===============*/
+}
+
+
+.janru-img{
+  position: relative;
+  text-align: center;
+}
+
+.janru-img p{
+  position: absolute;
+  color: #111;
+  text-shadow: 2px 2px 4px #fff;
+  font-weight: bold;
+  font-size: 2em;
+  font-family:Arial, Helvetica, sans-serif; 
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  margin: 0;
+  padding: 0;
+}
+
+.Janru-Select{
+  position: relative;
+  text-align: center;
+}
+
+.Janru-Select p{
+  position: absolute;
+  color: #111;
+  text-shadow: 2px 2px 4px #fff;
+  font-weight: bold;
+  font-size: 3vw;
+  font-family:Arial, Helvetica, sans-serif; 
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  margin: 0;
+  padding: 0;
+}
+
+.Janru-Select2{
+  position: relative;
+  text-align: center;
+}
+
+.Janru-Select2 p{
+  position: absolute;
+  color: #111;
+  text-shadow: 2px 2px 4px #fff;
+  font-weight: bold;
+  font-size: 3vw;
+  font-family:Arial, Helvetica, sans-serif; 
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  margin: 0;
+  padding: 0;
+}
+
+.Janru-Select3{
+  position: relative;
+  text-align: center;
+}
+
+.Janru-Select3 p{
+  position: absolute;
+  color: #111;
+  text-shadow: 2px 2px 4px #fff;
+  font-weight: bold;
+  font-size: 3vw;
+  font-family:Arial, Helvetica, sans-serif; 
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  margin: 0;
+  padding: 0;
+}
+
+.Janru-Select img{
+  display: inline-block;
+  background-position: center center;
+  background-repeat: no-repeat;
+  margin: 2px 2px;
+  width: 70%;
+  height: 20vw;
+  object-fit: cover;
+}
+
+.Janru-Select2 img{
+  display: inline-block;
+  background-position: center center;
+  background-repeat: no-repeat;
+  margin: 2px 2px;
+  width: 70%;
+  height: 20vw;
+  object-fit: cover;
+}
+
+.Janru-Select3 img{
+  display: inline-block;
+  background-position: center center;
+  background-repeat: no-repeat;
+  margin: 2px 2px;
+  width: 70%;
+  height: 20vw;
+  object-fit: cover;
+}
+
+#intro2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: white;/*文字を白に*/
+  text-shadow: 5px 5px 5px #0a0a0a;
+  font-weight: bold; /*太字に*/
+  font-size: 3vw;/*サイズ2倍*/
+  font-family : 'UD デジタル 教科書体 NP-B';/*Google Font*/
+  -ms-transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  margin:0;
+  padding:0;
+}
+
+.sl{
+  width: 100%;
+  position: relative;
+  
+}
+
+#footer{
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
