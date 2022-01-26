@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/search.css">
+    <link rel="stylesheet" type="text/css" href="static/css/top.css">
+    <link rel="stylesheet" type="text/css" href="static/css/a.css">
+    <link rel="icon" href="static/img/favicon.ico">
+
+    <title>位置情報で検索！盛岡インスタ映えスポット</title>
+</head>
+<body background="static/img/aa.jpg">
+    <header id="header">
+
+        <div class="logo"><a href="index.html"><img src="static/img/logo.png" alt="ロゴ"></a></div>
+        <nav class="nav-h">
+            <ul class="head">
+                <li><a href="ranking2.html">ランキング</a></li>  
+                <li><a href="janru.html">ジャンル</a></li>  
+                <li><a href="geo_inline.html">周辺の店</a></li>
+                <li><a href="https://forms.gle/LF1mKUi5CNzJuEdj7">アンケート</a></li>    
+            </ul>
+        </nav>
+            
+        <div class="openbtn1"><span></span><span></span><span></span></div>
+        <nav id="g-nav">
+            <div id="g-nav-list"><!--ナビの数が増えた場合縦スクロールするためのdiv※不要なら削除-->
+                <ul>
+                    <li><a href="index.html">トップ</a></li>
+                    <li><a href="ranking2.html">ランキング</a></li>  
+                    <li><a href="janru.html">ジャンル</a></li>  
+                    <li><a href="geo_inline.html">周辺の店</a></li>
+                    <li><a href="https://forms.gle/LF1mKUi5CNzJuEdj7">アンケート</a></li>  
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+
+    <div class="sl">
+
+        <div id="banner">
+            <img src="static/img/パフェ白.png" alt="画像1">
+        </div>
+    
+        <div id="intro2">
+            <h1>カフェ</h1>
+        </div>
+    </div>
+
+    <script>
+        function search_res() {
+            //0.名前 1.URL 2.料金 3.住所 4.画像名
+            let spotlist = [
+                //['光原社 可否館',"kougensya","～￥999","盛岡市材木町２−１８","dbz.jpg"],
+                ['チーズケーキのチロル 大通店',"tiroru","～￥999","盛岡市大通１丁目１０−２１","tiroru1.png"],
+                ['ティーハウス リーベ',"ri-be","～￥999","盛岡市内丸５−３","ri-be1.png"],
+                ['クラムボン',"kuramubon","～￥999","盛岡市紺屋町５−３３","クラムボン3.jpg"],
+                ['パンプルムゥス',"mousse","～￥999","盛岡市大通２丁目７−２０ ウエダビル 2F","pamplemousse1.jpg"],
+                ['ROB PHOTONS',"robphotons","￥100～￥2,000","盛岡市中央通１丁目９−１１ CUBE映画館通りビル B1","rob1.jpg"],
+                ['カプチーノ詩季',"kaputino","～￥999","盛岡市駅前下通１０−６","kou3.png"],
+            ];
+
+            for (let i = 0; i < spotlist.length; i++) {
+                let name = spotlist[i][0]
+                let url_name = spotlist[i][1]
+                let plice = spotlist[i][2]
+                let detail = spotlist[i][3]
+                let img = spotlist[i][4]
+
+                var area = document.getElementById("area");
+                area.insertAdjacentHTML("beforebegin", "<div class='grid-item'><img src=static/img/"+img+" class='img'>" + "<br>\n" + "<h1>"+name+"</h1><h2>料金："+plice+"</h2>" + "<br>\n" + "<a>"+detail+"</a>" + "<br>\n" + "<a href= "+url_name+".html>view more</a></div>");
+            }
+        }
+
+        window.onload = search_res;
+    </script>
+
+    <div class="container">
+        <div id="area"></div>
+    </div>
+
+    <footer id="footer">
+        <nav class="nav-h">
+            <ul class="head">
+                <li><a href="index.html">トップ</a></li>
+                <li><a href="ranking2.html">ランキング</a></li>  
+                <li><a href="janru.html">ジャンル</a></li>  
+                <li><a href="geo_inline.html">周辺の店</a></li>
+                <li><a href="https://forms.gle/LF1mKUi5CNzJuEdj7">アンケート</a></li>    
+            </ul>
+        </nav>
+        <small>&copy; copyright.</small>
+    </footer>
+
+    <script src="static/js/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/clipboard.js/1.5.13/clipboard.min.js"></script>
+    <script type="text/javascript" src="static/js/slick/slick.min.js"></script>
+    <script type="text/javascript" src="static/js/common.js"></script>
+    <script type="text/javascript" src="static/js/a.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+
+
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="static/css/geolocation.css">
+        <link rel="stylesheet" type="text/css" href="static/css/top.css">
+        <link rel="stylesheet" type="text/css" href="static/css/a.css">
+        <link rel="icon" href="static/img/favicon.ico">
+        <title>位置情報で検索！盛岡インスタ映えスポット</title>
+
+
+    </head>
+    <body background="static/img/aa.jpg">
+        <header id="header">
+
+            <div class="logo"><a href="index.html"><img src="static/img/logo.png" alt="ロゴ"></a></div>
+            <nav class="nav-h">
+                <ul class="head">
+                    <li><a href="ranking2.html">ランキング</a></li>  
+                    <li><a href="janru.html">ジャンル</a></li>  
+                    <li><a href="geo_inline.html">周辺の店</a></li>
+                    <li><a href="https://forms.gle/LF1mKUi5CNzJuEdj7">アンケート</a></li>    
+                </ul>
+            </nav>
+                
+            <div class="openbtn1"><span></span><span></span><span></span></div>
+            <nav id="g-nav">
+                <div id="g-nav-list"><!--ナビの数が増えた場合縦スクロールするためのdiv※不要なら削除-->
+                    <ul>
+                        <li><a href="index.html">トップ</a></li>
+                        <li><a href="ranking2.html">ランキング</a></li>  
+                        <li><a href="janru.html">ジャンル</a></li>  
+                        <li><a href="geo_inline.html">周辺の店</a></li>
+                        <li><a href="https://forms.gle/LF1mKUi5CNzJuEdj7">アンケート</a></li>  
+                    </ul>
+                </div>
+            </nav>
+        </header>
+    
+    
+        <div class="sl">
+    
+            <div id="banner">
+                <img src="static/img/geo2.png" alt="画像1">
+            </div>
+        
+            <div id="intro2">
+                <h1>周辺の店</h1>
+            </div>
+        </div>
+
+        <div class="button">
+            <button class="radius" onclick="search()">位置情報で検索</button>
+        </div>
+
+
+        <script>
+            function search() {
+                navigator.geolocation.getCurrentPosition(search2);
+            }
+        
+            function search2(position) {
+                //掲載場所と緯度経度のリスト(本番環境ではリストに4番目の要素としてローマ字URLを入れる)
+                let location = [
+                    ['カプチーノ詩季',39.70248251435912, 141.13836529766849,"kaputino","～￥999","盛岡市駅前下通１０−６","kou1.png"],
+                    ['チーズケーキのチロル 大通店', 39.70276734933744, 141.1481105688323,"tiroru","～￥999","盛岡市大通１丁目１０−２１","tiroru1.png"],
+                    ['ティーハウス リーベ',39.702304532894104, 141.15180620994383,"ri-be","～￥999","盛岡市内丸５−３","ri-be1.png"],
+                    ['クラムボン',39.70391524753632, 141.15669923437244,"kuramubon","￥1000～￥2000","盛岡市紺屋町５−３３","クラムボン1.jpg"],
+                    ['パンプルムゥス',39.7034366666641, 141.1452088387797,"mousse","～￥999","盛岡市大通２丁目７−２０ ウエダビル 2F","pamplemousse1.jpg"],
+                    ['ROB PHOTONS',39.70401663939024, 141.1477427971783,"robphotons","￥100～￥1,500","盛岡市中央通１丁目９−１１ CUBE映画館通りビル B1","rob1.jpg"],
+                    ['盛岡八幡宮',39.69554790670067, 141.16394123766074,"hachimangu","¥0","盛岡市八幡町１３−１","hachimangu.jpg"],
+                    ['盛岡城跡公園',39.700785082285684, 141.1514664432011,"jouseki","¥0","盛岡市内丸１−１−３７","moriokajou5.jpg"],
+                    ['岩手銀行赤レンガ館',39.70070933718373, 141.1552146971782,"akarenga","~¥300","盛岡市中ノ橋通１丁目２−２０","akarenga3.jpg"],
+                    ['高松の池',39.72293091991469, 141.1444844953322,"takamatsu","¥0","盛岡市高松１丁目２６−１","takamatsu1.jpg"],
+                    ['櫻山神社',39.70178993421084, 141.1518762432013,"sakurayama","¥0","盛岡市内丸１−４２","sakurayama.jpg"],
+                    ['ふくろうカフェRicky',39.7034065404121, 141.14418308183735,"owlcafe","~¥1000","盛岡市大通り３丁目１−２３ クリエイトビル地下","owl1.png"],
+                    ['南昌荘',39.69574451672659, 141.14874438368386,"nanshoso","¥150~¥300","盛岡市清水町１３−４６","nan.png"],
+                ];
+            
+                const R = Math.PI / 180;
+                for (let i = 0; i < location.length; i++) {
+                    const R = Math.PI / 180;
+                
+                    //ユーザーの現在地取得
+                    lat1 = position.coords.latitude *= R;
+                    lng1 = position.coords.longitude *= R;
+                
+                    //リストをループで回す
+                    lat2 = location[i][1];
+                    lat2 *= R;
+                
+                    lng2 = location[i][2];
+                    lng2 *= R;
+
+                    let name = location[i][0]
+                    let url_name = location[i][3]
+                    let plice = location[i][4]
+                    let detail = location[i][5]
+                    let img = location[i][6]
+
+                
+                    result = 6371 * Math.acos(Math.cos(lat1) * Math.cos(lat2) * Math.cos(lng2 - lng1) + Math.sin(lat1) * Math.sin(lat2));
+                
+                    //5km以内で絞り込み
+                    if(result <= 2){
+                        var area = document.getElementById("area");
+                        area.insertAdjacentHTML("beforebegin", "<div class='grid-item'><img src=static/img/"+img+" class='img'>" + "<br>\n" + "<h1>"+name+"</h1><h2>料金:"+plice+"　約"+ Math.round(result * 10) / 10 +"km</h2>" + "<br>\n" + "<a>"+detail+"</a>" + "<br>\n" + "<a href="+url_name+".html>view more</a></div>");
+                    }
+                }
+            }
+        
+        </script>
+
+        <br>
+
+        <div class="container"> 
+            <div id="area"></div>
+        </div>
+
+        <br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+        <footer id="footer">
+            <nav class="nav-h">
+                <ul class="head">
+                    <li><a href="index.html">トップ</a></li>
+                    <li><a href="ranking2.html">ランキング</a></li>  
+                    <li><a href="janru.html">ジャンル</a></li>  
+                    <li><a href="geo_inline.html">周辺の店</a></li>
+                    <li><a href="https://forms.gle/LF1mKUi5CNzJuEdj7">アンケート</a></li>    
+                </ul>
+            </nav>
+            <small>&copy; copyright.</small>
+        </footer>
+    
+        <script src="static/js/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/clipboard.js/1.5.13/clipboard.min.js"></script>
+        <script type="text/javascript" src="static/js/slick/slick.min.js"></script>
+        <script type="text/javascript" src="static/js/common.js"></script>
+        <script type="text/javascript" src="static/js/a.js"></script>
+
+    </body>
+</html>

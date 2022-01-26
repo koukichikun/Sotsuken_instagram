@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>位置情報で検索！盛岡インスタ映えスポット</title>
+        <meta name="description"  content="トップページ">
+        <link rel="icon" href="static/img/favicon.ico">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=yes">
+        <!--==============CSS===============-->
+        <!--<link rel="stylesheet" type="text/css" href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/reset.css">-->
+        <link rel="stylesheet" type="text/css" href="static/js/slick/slick.css">
+        <link rel="stylesheet" type="text/css" href="static/js/slick/slick-theme.css">
+        <link rel="stylesheet" type="text/css" href="static/css/common.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.4/css/all.css">
+        <link rel="stylesheet" type="text/css" href="static/css/top.css">
+        <link rel="stylesheet" type="text/css" href="static/css/backTop.css">
+        <link rel="stylesheet" type="text/css" href="static/css/a.css">
+    </head>
+
+
+    <body background="static/img/aa.jpg">
+        <header id="header">
+            <div class="logo"><a href="index.html"><img src="static/img/logo.png" alt="ロゴ"></a></div>
+            <nav class="a">
+                <ul class="c">
+                    <li><a href="ranking2.html">ランキング</a></li>  
+                    <li><a href="janru.html">ジャンル</a></li>  
+                    <li><a href="geo_inline.html">周辺の店</a></li> 
+                    <li><a href="https://forms.gle/LF1mKUi5CNzJuEdj7">アンケート</a></li>   
+                </ul>
+            </nav>
+                
+            <div class="openbtn1"><span></span><span></span><span></span></div>
+            <nav id="g-nav">
+                <div id="g-nav-list"><!--ナビの数が増えた場合縦スクロールするためのdiv※不要なら削除-->
+                    <ul>
+                        <li><a href="index.html">トップ</a></li>
+                        <li><a href="ranking2.html">ランキング</a></li>  
+                        <li><a href="janru.html">ジャンル</a></li>  
+                        <li><a href="geo_inline.html">周辺の店</a></li>
+                        <li><a href="https://forms.gle/LF1mKUi5CNzJuEdj7">アンケート</a></li>  
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        
+        <div class="sl">
+
+            <div class="slick1">
+                <div><img src="static/img/rob1.jpg" alt="画像1"></div>
+                <div><img src="static/img/akarenga1.jpg" alt="画像2"></div>
+                <div><img src="static/img/南昌壮2.jpg" alt="画像3"></div>
+            </div>
+
+
+        
+            <div class="intro">
+                <h1>位置情報で検索！<br>盛岡インスタ映えスポット</h1>
+                <!-- <p>紹介文</p> -->
+            </div>
+        </div>
+        
+        
+        <script>
+            function fivepic() {
+            //ランダム表示させたいスポット名称とローマ字URLを格納
+            //0.名前 1.URL 2.料金 3.住所 4.画像名
+            let location = [
+                ['高松の池',"takamatsu","¥0","盛岡市高松１丁目２６−１","takamatsu1.jpg"],
+                ['盛岡城跡公園', "jyoseki","¥0","盛岡市内丸１−１−３７","moriokajou5.jpg"],
+                ['ティーハウス リーベ', "ri-be","～￥999","盛岡市内丸５−３","ri-be1.png"],
+                ['カプチーノ詩季',"kaputino","～￥999","盛岡市駅前下通１０−６","kou3.png"],
+                ['クラムボン',"kuramubon","～￥999","盛岡市紺屋町５−３３","クラムボン3.jpg"],
+            ];
+            //重複チェック用配列
+		    var randoms = [];
+		    var min = 0, max = location.length-1;
+		    //重複チェックしながら乱数作成
+		    for(i = min; i <= max; i++){
+  		        while(true){
+    	        var tmp = intRandom(min, max);
+    		        if(!randoms.includes(tmp)){
+    			        randoms.push(tmp);
+    			        break;
+    		        }
+  		        }
+		    }
+		    //min以上max以下の整数値の乱数を返す
+		    function intRandom(min, max){
+  		    return Math.floor( Math.random() * (max - min + 1)) + min;
+		    }
+            for (let i = 0; i < 5; i++) {
+                res = randoms[i];
+                let name = location[res][0]
+                let rand_url = location[res][1]
+                let plice = location[res][2]
+                let addres = location[res][3]
+                let imgname = location[res][4]
+
+                let odd_or_even;
+                if(i % 2 == 0){
+                    odd_or_even = 4;
+                }else{
+                    odd_or_even = 5;
+                }
+
+                a_name.insertAdjacentHTML("beforebegin","<section><div class='e'><div class='box3'><h2>"+name+"</h2><div class='box1'><p>"+plice+"</p><p>"+addres+"</p></div><div class='box2'><a class='button' href="+rand_url+".html>view more</a></div></div><div class='box"+odd_or_even+"'><img src='static/img/"+imgname+"' class='s1'></div></div></section>");
+                }
+            }
+            window.onload = fivepic;
+        </script>
+        <div id="a_name"></div>
+
+        <footer id="footer">
+            <nav class="nav-h">
+                <ul class="head">
+                    <li><a href="index.html">トップ</a></li>
+                    <li><a href="ranking2.html">ランキング</a></li>  
+                    <li><a href="janru.html">ジャンル</a></li>  
+                    <li><a href="geo_inline.html">周辺の店</a></li>
+                    <li><a href="https://forms.gle/LF1mKUi5CNzJuEdj7">アンケート</a></li>    
+                </ul>
+            </nav>
+            <small>&copy; copyright.</small>
+        </footer>
+
+        <!--js-->            
+        <script src="static/js/jquery-3.6.0.min.js"></script>
+        <script type="text/javascript" src="static/js/slick/slick.min.js"></script>
+        <script type="text/javascript" src="static/js/common.js"></script>
+        <script type="text/javascript" src="static/js/a.js"></script>
+    </body>
+</html>
