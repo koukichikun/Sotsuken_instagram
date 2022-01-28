@@ -359,6 +359,7 @@ div{
 
     .slick2 {
         width: 100%;
+        height: 100px;
         margin-left: 5%;
         text-align:center;
         margin:0 auto;
