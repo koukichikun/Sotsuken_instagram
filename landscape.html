@@ -67,7 +67,7 @@
                 let img = spotlist[i][4]
 
                 var area = document.getElementById("area");
-                area.insertAdjacentHTML("beforebegin", "<div class='grid-item'><img src=static/img/"+img+" class='img'>" + "<br>\n" + "<h1>"+name+"</h1><h2>料金："+plice+"</h2>" + "<br>\n" + "<a>"+detail+"</a>" + "<br>\n" + "<a href= "+url_name+".html>view more</a></div>");
+                area.insertAdjacentHTML("beforebegin", "<div class='grid-item'><a href= "+url_name+".html><img src=static/img/"+img+" class='img'></a>" + "<br>\n" + "<h1>"+name+"</h1><h2>料金："+plice+"</h2>" + "<br>\n" + "<a>"+detail+"</a>" + "<br>\n" + "<a href= "+url_name+".html>view more</a></div>");
             }
         }
 
